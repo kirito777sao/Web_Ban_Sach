@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-top: 0;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+         .contact-info p {
+            margin-bottom: 10px;
+        }
+        .member-info {
+            margin-bottom: 20px;
+        }
+
+        .member-info h2 {
+            margin-bottom: 10px;
+        }
+        .back-link{
+             display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Liên hệ với chúng tôi</h1>
+
+    <div class="member-info">
+        <h2>Thông tin thành viên nhóm:</h2>
+        <p>Trần Đức Hoàn - DHTI15A14HN</p>
+        <p>Tạ Xuân Hoàng - DHTI15A14HN</p>
+        <p>Trần Quang Huy - DHTI15A14HN</p>
+    </div>
+
+    <div class="contact-form">
+        <form action="send_email.php" method="post">  <!-- Thay send_email.php bằng file xử lý gửi email -->
+            <label for="name">Tên của bạn:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email của bạn:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nội dung:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Gửi</button>
+        </form>
+    </div>
+    
+        <div class="contact-info">
+        <p>Hoặc liên hệ trực tiếp qua:</p>
+        <p>Email:<a href="mailto:duchoan77482003@gmail.com">duchoan77482003@gmail.com</a></p>
+        <p>Địa chỉ: 218 Lĩnh Nam - Hoàng Mai - Hà Nội</p>
+        <p>Điện thoại: 01213456789</p>
+    </div>
+
+ <p class="back-link"><a href="index.php">Về trang chủ</a></p>
+
+</div>
+
+</body>
+</html>

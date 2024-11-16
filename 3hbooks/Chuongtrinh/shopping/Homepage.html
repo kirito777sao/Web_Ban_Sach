@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách mới</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: flex-start; /* Canh lề trên cho nội dung */
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff; /* Màu nền trắng cho mỗi mục sách */
+        }
+
+
+        .book-item img {
+            max-width: 140px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .book-details {
+            flex: 1; /* Chiếm phần còn lại của không gian */
+        }
+
+        .book-details h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+
+        .book-details p {
+            margin: 8px 0;
+        }
+
+        .book-price {
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Sách mới</h3>
+    <?php
+        // Sample book data - Replace with your actual data from database
+        $books = [
+            [
+                'stt' => 1,
+                'image' => 'Images/Homepage_clip_image001.jpg',
+                'title' => 'Bí Ẩn Tam Giác Vàng',
+                'nxb' => 'Nxb Thanh Niên',
+                'author' => 'Nguyễn Như Phong',
+                'sotrang' => 396,
+                'kichthuoc' => '13 x 21',
+                'trongluong' => '370 gram',
+                'giabia' => 65000,
+                'giaban' => 65000
+            ],
+            [
+                'stt' => 2,
+                'image' => 'Images/Homepage_clip_image003.jpg',
+                'title' => 'Cung Bậc Tình Yêu 1',
+                'nxb' => 'Nxb Trẻ',
+                'author' => 'Nhiều Tác Giả. - Dịch giả: Tôn Thất Lan (Tuyển Chọn Và Biên Dịch).',
+                'sotrang' => 176,
+                'kichthuoc' => '13 x 20.5',
+                'trongluong' => '200 gram',
+                'giabia' => 28000,
+                'giaban' => 28000
+            ],
+            [
+                'stt' => 3,
+                'image' => 'Images/Homepage_clip_image004.jpg',
+                'title' => 'Kinh Tế Học Tổ Chức',
+                'nxb' => 'Nxb Tri Thức',
+                'author' => 'Claude Ménard. - Dịch giả: Nguyễn Đôn Phước',
+                'sotrang' => 216,
+                'kichthuoc' => '12 x 20',
+                'trongluong' => '220 gram',
+                'giabia' => 40000,
+                'giaban' => 40000
+            ]
+        ];
+
+
+        foreach ($books as $book) {
+            echo "<div class='book-item'>";
+                echo "<img src='{$book['image']}' alt='{$book['title']}'>";
+                echo "<div class='book-details'>";
+                    echo "<h3>{$book['stt']}. {$book['title']}</h3>";
+                    echo "<p>Nhà xuất bản: {$book['nxb']}</p>";
+                    echo "<p>Tác giả: {$book['author']}</p>";
+                    echo "<p>Số trang: {$book['sotrang']}</p>";
+                    echo "<p>Kích thước: {$book['kichthuoc']}</p>";
+                    echo "<p>Trọng lượng: {$book['trongluong']} (phí vận chuyển)</p>";
+                    echo "<p>Giá bìa: " . number_format($book['giabia'], 0) . " VNĐ</p>";
+                    echo "<p>Giá bán: <span class='book-price'>" . number_format($book['giaban'], 0) . "</span> VNĐ</p>";
+
+                echo "</div>";
+            echo "</div>";
+        }
+    ?>
+
+</div>
+
+
+</body>
+</html> 
